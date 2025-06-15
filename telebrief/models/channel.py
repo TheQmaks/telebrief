@@ -48,15 +48,9 @@ class Channel:
             return 0.0
         return self.total_views / len(self.posts)
 
-    def get_posts_by_date_range(
-        self, start_date: datetime, end_date: datetime
-    ) -> list[Post]:
+    def get_posts_by_date_range(self, start_date: datetime, end_date: datetime) -> list[Post]:
         """Get posts within date range."""
-        return [
-            post
-            for post in self.posts
-            if post.date and start_date <= post.date <= end_date
-        ]
+        return [post for post in self.posts if post.date and start_date <= post.date <= end_date]
 
     def to_dict(self) -> dict:
         """Convert channel to dictionary."""

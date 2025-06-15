@@ -711,6 +711,7 @@ wheels = [
 
 [[package]]
 name = "telebrief"
+version = "1.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "beautifulsoup4" },

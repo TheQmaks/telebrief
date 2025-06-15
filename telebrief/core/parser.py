@@ -49,10 +49,9 @@ class TelegramParser:
 
     def _setup_session(self) -> None:
         """Configure HTTP session with proxy and SSL settings."""
-        self.session.headers.update({
-            "User-Agent": DEFAULT_USER_AGENT,
-            "X-Requested-With": "XMLHttpRequest"
-        })
+        self.session.headers.update(
+            {"User-Agent": DEFAULT_USER_AGENT, "X-Requested-With": "XMLHttpRequest"}
+        )
 
         if self.config.network.use_proxy and self.config.network.proxy_url:
             self.session.proxies = {
@@ -480,9 +479,7 @@ class TelegramParser:
             soup = BeautifulSoup(html_content, "html.parser")
             return soup.get_text(separator=" ", strip=True)
 
-    def _get_channel_age_info(
-        self, channel_info: ChannelInfo, _latest_post_id: int | None
-    ) -> None:
+    def _get_channel_age_info(self, channel_info: ChannelInfo, _latest_post_id: int | None) -> None:
         """Get channel age information and set first_post_date in channel_info."""
         try:
             posts = self._get_earliest_posts(channel_info.channel)

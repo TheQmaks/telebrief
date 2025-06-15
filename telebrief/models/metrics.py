@@ -57,27 +57,22 @@ class Metrics:
             "total_posts": self.total_posts,
             "total_views": self.total_views,
             "analysis_period_days": self.analysis_period_days,
-
             "avg_views_per_post": round(self.avg_views_per_post, 2),
             "median_views_per_post": round(self.median_views_per_post, 2),
             "max_views": self.max_views,
             "min_views": self.min_views,
             "views_std_dev": round(self.views_std_dev, 2),
             "views_cv": round(self.views_cv, 2),
-
             "average_vr_percent": round(self.average_vr_percent, 2),
             "median_vr_percent": round(self.median_vr_percent, 2),
             "percentile_90_vr": round(self.percentile_90_vr, 2),
             "percentile_75_vr": round(self.percentile_75_vr, 2),
             "consistency_index_percent": round(self.consistency_index_percent, 2),
-
             "posts_per_day": round(self.posts_per_day, 2),
             "active_subs_estimate": self.active_subs_estimate,
             "activation_ratio_percent": round(self.activation_ratio_percent, 2),
-
             "top_10_percent_share": round(self.top_10_percent_share, 2),
             "gini_coefficient": round(self.gini_coefficient, 2),
-
             "engagement_quality": self.engagement_quality,
             "content_consistency": self.content_consistency,
             "posting_frequency": self.posting_frequency,
