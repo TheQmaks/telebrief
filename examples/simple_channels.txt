@@ -1,0 +1,9 @@
+# Example channels for batch analysis
+# Usage: python examples/analyze_from_file.py examples/simple_channels.txt
+
+# News
+bloomberg       # Bloomberg - financial and business news
+insiderpaper    # Insider Paper - breaking news
+
+# Information
+realta_rent_il  # Realta Rent - real estate updates

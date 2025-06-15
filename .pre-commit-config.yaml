@@ -1,0 +1,71 @@
+# Pre-commit configuration for Telebrief
+repos:
+  # Ruff for linting and formatting
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.8
+    hooks:
+      # Linting
+      - id: ruff
+        name: ruff lint
+        description: "Code check with ruff"
+        args: [--fix]
+        
+      # Formatting
+      - id: ruff-format
+        name: ruff format
+        description: "Code formatting with ruff"
+
+  # MyPy for type checking
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.8.0
+    hooks:
+      - id: mypy
+        name: mypy
+        description: "Type checking with mypy"
+        additional_dependencies:
+          - types-requests
+          - types-beautifulsoup4
+        args: [--ignore-missing-imports]
+
+  # Basic checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      # YAML file check
+      - id: check-yaml
+        name: check yaml
+        description: "Check YAML syntax"
+        
+      # TOML file check
+      - id: check-toml
+        name: check toml
+        description: "Check TOML syntax"
+        
+      # Large file check
+      - id: check-added-large-files
+        name: check large files
+        description: "Check for large files"
+        args: [--maxkb=1000]
+        
+      # Remove trailing whitespace
+      - id: trailing-whitespace
+        name: trim trailing whitespace
+        description: "Remove trailing whitespace"
+        
+      # Check file endings for newline
+      - id: end-of-file-fixer
+        name: fix end of files
+        description: "Fix file endings"
+
+# Settings
+ci:
+  autofix_commit_msg: |
+    [pre-commit.ci] auto fixes from pre-commit hooks
+    
+    for more information, see https://pre-commit.ci
+  autofix_prs: true
+  autoupdate_branch: ''
+  autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
+  autoupdate_schedule: weekly
+  skip: []
+  submodules: false 
